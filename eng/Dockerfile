@@ -16,5 +16,5 @@ WORKDIR /app
 VOLUME /app/data
 COPY --from=base /app/out .
 EXPOSE 8080
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 CMD curl --fail http://localhost:80/health || exit 1
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 CMD curl --fail http://localhost:8080/health || exit 1
 ENTRYPOINT ["./Flixio.Api"]
