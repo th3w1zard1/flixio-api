@@ -1,3 +1,5 @@
+namespace Flixio.Api.Data.Entities;
+
 public class AddonCollection
 {
     public string AuthKey { get; set; } = null!;
