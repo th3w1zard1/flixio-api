@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flixio.Api", "src\Flixip.Api\Flixio.Api.csproj", "{A3BEF940-B7DC-4769-965D-E4BCA7DC899B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flixio.Api", "src\Flixio.Api\Flixio.Api.csproj", "{E4061C54-C646-4B78-8F17-B5724C0C211C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A3BEF940-B7DC-4769-965D-E4BCA7DC899B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3BEF940-B7DC-4769-965D-E4BCA7DC899B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3BEF940-B7DC-4769-965D-E4BCA7DC899B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3BEF940-B7DC-4769-965D-E4BCA7DC899B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4061C54-C646-4B78-8F17-B5724C0C211C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4061C54-C646-4B78-8F17-B5724C0C211C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4061C54-C646-4B78-8F17-B5724C0C211C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4061C54-C646-4B78-8F17-B5724C0C211C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
