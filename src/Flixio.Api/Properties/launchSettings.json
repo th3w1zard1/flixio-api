@@ -8,7 +8,8 @@
       "applicationUrl": "http://localhost:5248",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "LOKI_LOGGING_FORMAT": ""
+        "FLIXIO_LOKI_LOGGING_FORMAT": "",
+        "FLIXIO_RESET_DATABASE": "true"
       }
     }
   }

@@ -11,7 +11,7 @@ public class ErrorsMiddleware : IMiddleware
         catch (Exception ex)
         {
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            await context.Response.WriteAsJsonAsync(new APIError(ex.Message, 500));
+            await context.Response.WriteAsJsonAsync(ResponseWrapper.ErrorResponse(ex.Message, 500));
         }
     }
 }

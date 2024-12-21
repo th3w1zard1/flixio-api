@@ -4,13 +4,14 @@ builder.SetupOtlp();
 
 builder.Services
     .RegisterFlixioDbContext()
-    .RegisterMiddleware();
+    .RegisterMiddleware()
+    .SetupAllowAllCors();
 
 var app = builder.Build();
 
 app.SetupFlixio();
 
-await app.LogStartup();
+await app.SetupDatabase();
 
 await app.RunAsync();
 

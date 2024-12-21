@@ -4,14 +4,12 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <OutputType>Library</OutputType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="SimCube.Aspire" Version="1.0.6" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Flixio.Api.Data\Flixio.Api.Data.csproj" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0" />
     </ItemGroup>
 
 </Project>

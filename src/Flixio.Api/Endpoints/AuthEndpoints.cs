@@ -24,24 +24,18 @@ public static class AuthEndpoints
         
         return group;
     }
+    
+    private static IResult Login() => Results.Text(StaticUserResults.DefaultUserResponseWithAuthKey);
 
-    private static IResult Login() => 
-        Results.Ok(new AuthResponse(Constants.DefaultAuthKey, Constants.DefaultUser));
+    private static IResult Logout() => Results.Json(new { success = "true" });
 
-    private static IResult Logout() =>
-        Results.Ok(new SuccessResponse(true));
+    private static IResult Register([FromBody] RegisterRequest request) => Results.Text(StaticUserResults.DefaultUserResponseWithAuthKey);
 
-    private static IResult Register([FromBody] RegisterRequest request) =>
-        Results.Ok(new AuthResponse(Constants.DefaultAuthKey, Constants.DefaultUser));
+    private static IResult LoginWithToken() => Results.Text(StaticUserResults.DefaultUserResponseWithAuthKey);
 
-    private static IResult LoginWithToken() =>
-        Results.Ok(new AuthResponse(Constants.DefaultAuthKey, Constants.DefaultUser));
+    private static IResult AuthWithFacebook() => Results.Text(StaticUserResults.DefaultUserResponseWithAuthKey);
 
-    private static IResult AuthWithFacebook() =>
-        Results.Ok(new AuthResponse(Constants.DefaultAuthKey, Constants.DefaultUser));
-
-    private static IResult GetUser() =>
-        Results.Ok(new UserResponse(Constants.DefaultUser.Id, Constants.DefaultUser.Email, "Hardcoded User", "avatar_url", false));
+    private static IResult GetUser() => Results.Text(StaticUserResults.DefaultUserResponse);
 
     private static IResult Create() =>
         Results.Ok(new LinkCodeResponse(Constants.DefaultAuthKey, "link", "qrcode"));
