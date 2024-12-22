@@ -21,7 +21,8 @@ services:
     image: ipromknight/stremio-web:latest
     environment:
       API_ENDPOINT: http://localhost:5555
-      API_KEY: some-api-key
+      API_KEY: some-api-key # Same as FLIXIO_API_KEY
+      WEB_AUTH_KEY: some-auth # Auth key for web interface
     entrypoint: /bin/sh -c "node http_server.js"
     ports:
       - "8080:8080"
