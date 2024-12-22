@@ -4,13 +4,23 @@ public static class WebApplicationExtensions
 {
     public static WebApplication SetupFlixio(this WebApplication app)
     {
-        app.UseCors(Constants.CorsPolicies.AllowAllPolicy);
+        app.UseCors(CorsConstants.Policy);
+        app.UseApiKeyAuthentication();
         app.RegisterFlixioRoutes();
         app.UseMiddleware<ErrorsMiddleware>();
 
         return app;
     }
 
+    public static async Task LogConfigurationValues(this WebApplication app)
+    {
+        await using var scope = app.Services.CreateAsyncScope();
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+        
+        logger.LogInformation("Allowed Origins: {AllowedOrigins}", CorsConstants.EnvVars.AllowedOrigins.GetFromEnvironment());
+        logger.LogInformation("Using Api Key Authentication: {ApiKeyAuthentication}", ApiKeyAuthenticationConstants.EnvVars.ApiKey.GetFromEnvironment());
+    }
+    
     public static async Task SetupDatabase(this WebApplication app)
     {
         await using var scope = app.Services.CreateAsyncScope();
@@ -39,8 +49,17 @@ public static class WebApplicationExtensions
             .MapAuthEndpoints()
             .MapDatastoreEndpoints()
             .MapGeneralEndpoints()
-            .MapAnalyticsEndpoints();
+            .MapAnalyticsEndpoints()
+            .RequireApiKeyAuthentication();
         
+        return app;
+    }
+    
+    private static WebApplication UseApiKeyAuthentication(this WebApplication app)
+    {
+        app.UseAuthentication();
+        app.UseAuthorization();
+
         return app;
     }
 }

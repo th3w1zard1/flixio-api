@@ -6,4 +6,9 @@ public static class EnvironmentalVariablesExtensions
     {
         return !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(value));
     }
+    
+    public static string? GetFromEnvironment(this string value)
+    {
+        return Environment.GetEnvironmentVariable(value);
+    }
 }

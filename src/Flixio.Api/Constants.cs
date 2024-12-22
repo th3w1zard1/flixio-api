@@ -11,9 +11,4 @@ public static class Constants
         public const string ResetDatabase = "FLIXIO_RESET_DATABASE";
         public const string LokiLoggingFormat = "FLIXIO_LOKI_LOGGING_FORMAT";
     }
-
-    public static class CorsPolicies
-    {
-        public const string AllowAllPolicy = "AllowAll";
-    }
 }
