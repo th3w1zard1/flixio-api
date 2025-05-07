@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: ipromknight/flixio-api
+  IMAGE_NAME: th3w1zard1/flixio-api
 
 jobs:
   execution:
